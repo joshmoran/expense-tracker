@@ -55,7 +55,7 @@
   1. Description
   2. Amount 
 - Does not need a category as Category array index 0 is the income category
-- 
+
 ### Error Handling
 - Choosing a category 
   - The user is shown an index with a name for each category

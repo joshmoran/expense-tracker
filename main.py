@@ -4,25 +4,25 @@ import math
 total = 500.00
 
 transactions = [
-    [ 22, 'Bills', 'Internet'],
-    [ 10, 'Debt', 'Car payment'],
-    [ 50, 'Food', 'Groceries'],
-    [ 1000, 'Income', 'Job Salary'],
-    [ 30, 'Household Expenses', 'Cleaning'],
-    [ 25, 'Transportation', 'Bus transport'],
-    [ 15, 'Entertainment', 'Game'],
-    [ 10, 'Food', 'Eating out']
+    [ 22.00, 'Bills', 'Internet'],
+    [ 10.00, 'Debt', 'Car payment'],
+    [ 5.00, 'Food', 'Groceries'],
+    [ 100.00, 'Income', 'Job Salary'],
+    [ 30.00, 'Household Expenses', 'Cleaning'],
+    [ 25.00, 'Transportation', 'Bus transport'],
+    [ 15.00, 'Entertainment', 'Game'],
+    [ 10.00, 'Food', 'Eating out']
 ]
 
 categories = [
-    [ 'Income', 10],
+    [ 'Income', 10.00],
     [ 'Debt', 10.00 ],
-    [ 'Bills', 225],
-    [ 'Household Expenses', 47],
-    [ 'Transportation', 234 ],
-    [ 'Food', 22 ],
-    [ 'Entertainment', 69 ],
-    [ 'Miscellaneous', 92 ]
+    [ 'Bills', 225.00],
+    [ 'Household Expenses', 47.00],
+    [ 'Transportation', 234.00 ],
+    [ 'Food', 22.00 ],
+    [ 'Entertainment', 69.00 ],
+    [ 'Miscellaneous', 92.00 ]
 ]
 
 def init () :
@@ -59,13 +59,13 @@ def view_expenses():
     # Print available total
     print("> Balance")
     rounded_total = round_number(total)
-    print(f"Your account balance is: £{rounded_total}0")
+    print(f"Your account balance is: £{rounded_total}")
     print("")
     print(f"> By Categories")
     # List categories and their total
     for category in categories:
         rounded_amount = round_number( category[1] )
-        print(f"{category[0]}: £{rounded_amount}0")
+        print(f"{category[0]}: £{rounded_amount}")
     
     print("")
     # List transactions
@@ -74,7 +74,7 @@ def view_expenses():
     print("Category -- Description : Amount")
     for transaction in transactions:
         rounded_amount = round_number( transaction[0] )
-        print(f"{transaction[1]} ----- {transaction[2]}: £{rounded_amount}0")
+        print(f"{transaction[1]} ----- {transaction[2]}: £{rounded_amount}")
     print("")
     menu()
 
@@ -234,7 +234,7 @@ def add_expense():
             menu()
 
 def round_number( number ):
-    return round( float(number), 3 )
+    return format( float(number), '.2f' )
     
 def show_categories():
     index_value = 1
